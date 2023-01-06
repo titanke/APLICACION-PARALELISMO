@@ -84,7 +84,7 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    //final docData = docsSnap.data() as Map<String, dynamic>;
+    final docData = docsSnap.data() as Map<String, dynamic>;
 
     FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
     FlutterStatusbarcolor.setNavigationBarWhiteForeground(true);
@@ -112,10 +112,10 @@ class _SearchPageState extends State<SearchPage> {
         ),
       ),
 
-     //drawer: docData != null ? drawer(image1,context,docData['profileImage'],docData['firstName']+" "+docData['lastName'],docData['email'],"true",'/User/'+docRef)
-     //                         : drawer(image1,context,'assets/icons/avatar.png','Iniciar sesion / Registrarse ','','false',null),
+     drawer: docData != null ? drawer(image1,context,docData['profileImage'],docData['firstName']+" "+docData['lastName'],docData['email'],"true",'/User/'+docRef)
+                              : drawer(image1,context,'assets/icons/avatar.png','Iniciar sesion / Registrarse ','','false',null),
 
-            drawer: drawer(image1,context,'assets/icons/avatar.png','Iniciar sesion / Registrarse ','','false',null),
+          //  drawer: drawer(image1,context,'assets/icons/avatar.png','Iniciar sesion / Registrarse ','','true',null),
     );
   }
 

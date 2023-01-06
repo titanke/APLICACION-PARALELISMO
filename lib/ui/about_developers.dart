@@ -40,30 +40,8 @@ class AboutDevelopers extends StatelessWidget{
                 SizedBox(
                   height: size.getWidthPx(10),
                 ),
-                getDevCard(context, 'https://github.com/KevinPatel04', 'Kevin Patel', 'https://www.linkedin.com/in/kevinpatel04/', 'Project Manager,\nBA & Flutter Developer', 'mailto:patelkvin04@gmail.com', 'assets/developers/kevin.jpg'), 
-                SizedBox(
-                  height: size.getWidthPx(10),
-                ),
-                getDevCard(context, 'https://github.com/imsiddy', 'Siddharth Patel', 'linkedin/siddharth', 'UI Designer\n&\nDeveloper', 'mailto:17ce086@charusat.edu.in', 'assets/developers/siddharth.jpg'), 
-                SizedBox(
-                  height: size.getWidthPx(10),
-                ),
-                getDevCard(context, 'https://github.com/niss10', 'Nisarg Patel', 'linkedin/nisarg', 'Flutter Developer', 'mailto:17ce080@charusat.edu.in', 'assets/developers/nisarg.jpg'),
-                SizedBox(
-                  height: size.getWidthPx(10),
-                ),
-                getDevCard(context, 'https://github.com/MeetR18', 'Meet Ramaiya', 'https://www.linkedin.com/in/meet-ramaiya-098528168', 'Flutter Developer', 'mailto:17ce090@charusat.edu.in', 'assets/developers/meet.jpg'),
-                SizedBox(
-                  height: size.getWidthPx(10),
-                ),
-                getDevCard(context, 'https://github.com/Ceaser2109', 'Hussain Sadikot', 'https://www.linkedin.com/in/hussain-sadikot-85175b151/', 'Flutter Developer', 'mailto:17ce095@charusat.edu.in', 'assets/developers/hussain.jpg'),
-                SizedBox(
-                  height: size.getWidthPx(10),
-                ),
-                getDevCard(context, 'https://github.com/namrata1310', 'Namrata Patel', 'linkedin/namrata', 'QA & Tester', 'mailto:17ce078@charusat.edu.in', 'assets/developers/namrata.png'),
-                SizedBox(
-                  height: size.getWidthPx(10),
-                ),
+                getDevCard(context, 'https://github.com/KevinPatel04', 'Josue Chambilla Vilca', 'https://www.linkedin.com/in/josue-job-chambilla-vilca-9728a9228/', 'Programador,\n ', 'mailto:josuejob_galeno@hotmail.com', 'assets/developers/io.jpeg'),
+
             ],
           ),
         ),

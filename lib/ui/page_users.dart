@@ -32,7 +32,7 @@ class _UsersState extends State<Users> {
   
   AppBar buildAppBar(BuildContext context) {
     return new AppBar(
-        title: new Text('Search People'),
+        title: new Text('Buscar Personas'),
         backgroundColor: Colors.blue[700],
         actions: [searchBar.getSearchAction(context)]);
   }
@@ -58,6 +58,7 @@ class _UsersState extends State<Users> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: searchBar.build(context),
+      /*
       body: StreamBuilder(
           stream: FirebaseFirestore.instance.collection('User').snapshots(),
           builder: (context, snapshot) {
@@ -77,13 +78,15 @@ class _UsersState extends State<Users> {
                 return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                getUserCard(docsSnap, context),
+                //getUserCard(docsSnap, context),
               ],
             );
           },
         ),
       );
-    }));
+    })
+    */
+    );
   }
 
   Widget getUserCard(DocumentSnapshot docsSnap,var context){
@@ -140,9 +143,9 @@ class _UsersState extends State<Users> {
                               ),
                               docData.containsKey("city") ?
                               Text(
-                                "${docsSnap['city']}, India",
+                                "${docsSnap['city']}, Peru",
                                 style: TextStyle(color: Colors.grey,fontSize: size.getWidthPx(16)),
-                              ) : Text("India",style: TextStyle(color: Colors.grey,fontSize: size.getWidthPx(16))),
+                              ) : Text("Peru",style: TextStyle(color: Colors.grey,fontSize: size.getWidthPx(16))),
                             ],
                           ),
                           SizedBox(

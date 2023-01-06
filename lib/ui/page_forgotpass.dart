@@ -109,7 +109,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       );
 
   GradientText _forgotGradientText() {
-    return GradientText('Forgot password',
+    return GradientText('Olvidaste la contraseña',
         gradient: LinearGradient(colors: [
           Colors.blue[700],
           Colors.blue[700]
@@ -128,7 +128,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
   BoxField _emailWidget() {
     return BoxField(
-      hintText: "Enter email",
+      hintText: "Ingresar email",
       lableText: "Email",
       obscureText: false,
       onSaved: (value) => _email = value,
@@ -161,7 +161,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
          */
         child: Text(
-          "Submit",
+          "Aceptar",
           style: TextStyle(
               fontFamily: 'Exo2', color: Colors.white, fontSize: 20.0),
         ),

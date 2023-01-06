@@ -55,13 +55,20 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicator> {
         itemBuilder: (BuildContext context, int index) {
           return ClipRRect(
             borderRadius: BorderRadius.circular(0.0),
+            /*
             child: PNetworkImage(
               snapshot['houseImages'][index],
               fit: BoxFit.cover,
             ),
+             */
+            child: PNetworkImage(
+              "https://imganuncios.mitula.net/oficina_con_buena_ubicacion_en_la_mejor_zona_de_santa_catalina_3600005636567764181.jpg",
+              fit: BoxFit.cover,
+            ),
           );
         },
-        itemCount: snapshot['houseImages'].length,
+        //itemCount: snapshot['houseImages'].length,
+        itemCount: 1,
         viewportFraction: 1,
         scale: 1,
         pagination: SwiperPagination(),
@@ -431,7 +438,7 @@ Widget getSecondCard() {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              '${snapshot['Overview']['room']} BHK in ${snapshot['Address']['city']}',
+                              '${snapshot['Overview']['room']} cuarti en ${snapshot['Address']['city']}',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                   fontSize: 18,
@@ -444,7 +451,7 @@ Widget getSecondCard() {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              'At ${snapshot['Address']['society']}',
+                              '. ${snapshot['Address']['society']}',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                   fontSize: 13,
@@ -488,7 +495,7 @@ Widget getSecondCard() {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              'Sq. ft.',
+                              'm2.',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                   color: Colors.black.withOpacity(0.6)),
@@ -532,7 +539,7 @@ Widget getThirdCard() {
                             child: Row(
                               children: <Widget>[
                                 Icon(
-                                  FontAwesomeIcons.rupeeSign,
+                                  FontAwesomeIcons.dollarSign,
                                   color: Colors.black.withOpacity(0.6),
                                 ),
                                 Text(
@@ -551,7 +558,7 @@ Widget getThirdCard() {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              'Security Deposit',
+                              'Dinero adelantado',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 13,
@@ -585,7 +592,7 @@ Widget getThirdCard() {
                             child: Row(
                               children: <Widget>[
                                 Icon(
-                                  FontAwesomeIcons.rupeeSign,
+                                  FontAwesomeIcons.dollarSign,
                                   color: Colors.black.withOpacity(0.6),
                                 ),
                                 Text(
@@ -604,7 +611,7 @@ Widget getThirdCard() {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              'Rent per month',
+                              'Renta por mes',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 13,
@@ -660,7 +667,7 @@ Widget getFourthCard() {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              'Furnishing Status',
+                              'Estado de amoblado',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                   fontSize: 15,
@@ -705,10 +712,10 @@ Widget getFourthCard() {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              'Prefered Tanents',
+                              'Inquilinos preferenciales',
                               textAlign: TextAlign.left,
                               style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: 12,
                                   color: Colors.black.withOpacity(0.5)),
                             ),
                           ),
@@ -752,7 +759,7 @@ Widget getFifthCard() {
                         ),
                       ),
                       child: Text(
-                        'OVERVIEW',
+                        'Resumen',
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.black.withOpacity(0.7),
@@ -798,7 +805,7 @@ Widget getFifthCard() {
                                             width: 10,
                                           ),
                                           Text(
-                                            snapshot['Overview']['room']+' Bedroom',
+                                            snapshot['Overview']['room']+' Cama',
                                             style: TextStyle(
                                               color: Colors.black.withOpacity(0.6),
                                               fontSize: 20,
@@ -836,7 +843,7 @@ Widget getFifthCard() {
                                             width: 10,
                                           ),
                                           Text(
-                                            snapshot['favourite'].toString()+' Likes',
+                                            snapshot['favourite'].toString()+' Me gusta',
                                             style: TextStyle(
                                               color: Colors.black.withOpacity(0.6),
                                               fontSize: 20,
@@ -917,7 +924,7 @@ Widget getFifthCard() {
                                             width: 10,
                                           ),
                                           Text(
-                                            snapshot['Overview']['bathroom']+' Bathroom',
+                                            snapshot['Overview']['bathroom']+' Baño',
                                             style: TextStyle(
                                               color: Colors.black.withOpacity(0.6),
                                               fontSize: 20,
@@ -1039,7 +1046,7 @@ Widget getSixthCard() {
                         ),
                       ),
                     ),
-                    child: Text('DESCRIPTION',
+                    child: Text('DESCRIPCION',
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.black.withOpacity(0.7),
@@ -1086,7 +1093,7 @@ Widget getSeventhCard() {
                           ),
                         ),
                       ),
-                      child: Text('AMENITIES',
+                      child: Text('AGREGADOS',
                           style: TextStyle(
                             fontSize: 18,
                             color: Colors.black.withOpacity(0.7),
@@ -1114,7 +1121,7 @@ Widget getSeventhCard() {
 
 Widget getFacility(var fac){
   switch(fac){
-    case 'Fire Safety':
+    case 'Seguro ante incendios':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1134,7 +1141,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-    case 'Air Conditioner':
+    case 'Aire Acondicionado':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1155,7 +1162,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-    case 'Washing Machine':
+    case 'Lavadora':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1176,7 +1183,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-    case 'Car Parking':
+    case 'Cerca a paradero':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1218,7 +1225,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-      case 'Tiffin Facility':
+      case 'Restaurantes cerca':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1240,7 +1247,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-      case '24x7 Water Supply':
+      case 'Agua 24x7':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1262,7 +1269,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-      case 'Garden':
+      case 'Parque cercano':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1284,7 +1291,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-      case 'Lift':
+      case 'Piso':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1306,7 +1313,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-      case '24x7 CCTV':
+      case 'Tv por cable':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1328,7 +1335,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-      case 'Swimming Pool':
+      case 'Sotea':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1350,7 +1357,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-      case 'Security':
+      case 'Seguridad':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1372,7 +1379,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-      case 'Children Park':
+      case 'Estacionamiento':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1394,7 +1401,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-      case 'Gym':
+      case 'Gimnasios cerca':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1416,7 +1423,7 @@ Widget getFacility(var fac){
           ),
       );
       break;
-      case 'HouseKeeping':
+      case 'Limpieza':
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
@@ -1466,7 +1473,7 @@ Widget getNinthCard() {
                           ),
                         ),
                       ),
-                      child: Text('PICTURES BY CUSTOMERS',
+                      child: Text('FOTOS DE LOS USUARIOS',
                           style: TextStyle(
                             fontSize: 18,
                             color: Colors.black.withOpacity(0.7),
@@ -1489,7 +1496,7 @@ Widget getNinthCard() {
                       Navigator.pushReplacement(context,MaterialPageRoute(builder: (_)=> MultiImage(snapshot.id,snapshot)));
                     },
                     child: Center(child: Text(
-                      "ADD HOUSE IMAGES",
+                      "AGREGAR IMAGENES DEL LUGAR",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -1532,7 +1539,7 @@ Widget getEightCard() {
                         ),
                       ),
                     ),
-                    child: Text('ADDRESS',
+                    child: Text('DIRECCION',
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.black.withOpacity(0.7),
@@ -1623,7 +1630,7 @@ Widget getTenthCard() {
                         ),
                       ),
                       child: Text(
-                        'OWNER\'S DETAIL',
+                        'DATOS DEL DUEÑO',
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.black.withOpacity(0.7),
@@ -1694,9 +1701,9 @@ Widget getUserCard(var context){
                             ),
                             owdata.containsKey("city") ?
                             Text(
-                              "${ownerSnapshot['city']}, India",
+                              "${ownerSnapshot['city']}, Peru",
                               style: TextStyle(color: Colors.grey,fontSize: size.getWidthPx(16)),
-                            ) : Text("India",style: TextStyle(color: Colors.grey,fontSize: size.getWidthPx(16))),
+                            ) : Text("Peru",style: TextStyle(color: Colors.grey,fontSize: size.getWidthPx(16))),
                           ],
                         ),
                         SizedBox(

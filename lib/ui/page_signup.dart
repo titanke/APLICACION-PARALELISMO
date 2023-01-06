@@ -184,7 +184,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   child: TextFormField(
                     cursorColor: Colors.blue[900],
                     decoration: InputDecoration(
-                        hintText: "First Name",
+                        hintText: "Nombres",
                         prefixIcon: Material(
                           elevation: 0,
                           borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -213,7 +213,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   child: TextFormField(
                     cursorColor: Colors.blue[900],
                     decoration: InputDecoration(
-                        hintText: "Last Name",
+                        hintText: "Apellidos",
                         prefixIcon: Material(
                           elevation: 0,
                           borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -243,7 +243,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     keyboardType: TextInputType.phone,
                     cursorColor: Colors.blue[900],
                     decoration: InputDecoration(
-                        hintText: "Mobile Number",
+                        hintText: "Numero de Telefono",
                         prefixText: "+51",
                         prefixIcon: Material(
                           elevation: 0,
@@ -303,7 +303,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     obscureText: true,
                     cursorColor: Colors.blue[800],
                     decoration: InputDecoration(
-                        hintText: "Password",
+                        hintText: "Contraseña",
                         prefixIcon: Material(
                           elevation: 0,
                           borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -333,7 +333,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     obscureText: true,
                     cursorColor: Colors.blue[800],
                     decoration: InputDecoration(
-                        hintText: "Confirm Password",
+                        hintText: "Confirmar contraseña ",
                         prefixIcon: Material(
                           elevation: 0,
                           borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -362,7 +362,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         color: Color(0xff1976d2)),
                     child: TextButton(
                       child: Text(
-                        "Get Started",
+                        "Ingresar",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w700,
@@ -378,7 +378,7 @@ class _SignUpPageState extends State<SignUpPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Already Registered ? ",
+                  "Ya tienes una cuenta? ",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: size.hp(2),
@@ -386,7 +386,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 TextButton(
                   child: Text(
-                    "Login",
+                    "Inicia sesion",
                     style: TextStyle(
                         color: Colors.blue[700],
                         fontWeight: FontWeight.w500,

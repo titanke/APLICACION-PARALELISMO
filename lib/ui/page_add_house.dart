@@ -69,7 +69,7 @@ String _ownnumber;
 int _value = 0;
 int groupValue = 0;
 String _farnistatus;
-String _preferedType = "Aynone";
+String _preferedType = "Todos";
 String _propert;
 List<String> imageDataPath = <String>[];
 
@@ -807,7 +807,7 @@ class _MyPropertyOptionsState extends State<MyPropertyOptions> {
               onSelected: (bool selected) {
                 setState(() {
                   _value = selected ? 1 : null;
-                  String apartment = 'Bunglow';
+                  String apartment = 'Primer piso';
                   _propert = apartment;
                 });
               },
@@ -835,7 +835,7 @@ class _MyPropertyOptionsState extends State<MyPropertyOptions> {
               onSelected: (bool selected) {
                 setState(() {
                   _value = selected ? 2 : null;
-                  String apartment = 'PG';
+                  String apartment = 'Segundo piso';
                   _propert = apartment;
                 });
               },
@@ -864,7 +864,7 @@ class _MyPropertyOptionsState extends State<MyPropertyOptions> {
               onSelected: (bool selected) {
                 setState(() {
                   _value = selected ? 3 : null;
-                  String apartment = 'Cuarto piso';
+                  String apartment = 'Tercer piso';
                   _propert = apartment;
                 });
               },
@@ -884,7 +884,7 @@ class _MyPropertyOptionsState extends State<MyPropertyOptions> {
                 ),
               ),
               label: Text(
-                "Hostel",
+                "Cuarto piso",
                 style: TextStyle(
                   color: (_value == 4) ? Colors.grey.shade200 : Colors.black87,
                 ),
@@ -893,7 +893,7 @@ class _MyPropertyOptionsState extends State<MyPropertyOptions> {
               onSelected: (bool selected) {
                 setState(() {
                   _value = selected ? 4 : null;
-                  String apartment = 'Hostel';
+                  String apartment = 'Cuarto piso';
                   _propert = apartment;
                 });
               },
@@ -1051,7 +1051,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       }
       if (e == 2) {
         groupValue = 2;
-        String apartment = 'Parcialmente amoblado';
+        String apartment = 'Parcialmente';
         _farnistatus = apartment;
       }
       if (e == 3) {
@@ -1106,11 +1106,9 @@ class _Finalfmstate extends State<Finalfm> {
     if (form.validate()) {
       form.save();
       createRecord(context);
-
       Navigator.push(
           //context, MaterialPageRoute(builder: (context) => AddImages()));
       context, MaterialPageRoute(builder: (context) => SearchPage()));
-
       return true;
     } else {
       return false;
@@ -1438,23 +1436,23 @@ class _TentypeState extends State<Tentype> {
                   switch (title) {
                     case "Students":
                       stdVal = value;
-                      _preferedType = "Students";
+                      _preferedType = "Estudiantes";
                       break;
                     case "Bachelors":
                       baVal = value;
-                      _preferedType = "Bachelors";
+                      _preferedType = "Egresados";
                       break;
                     case "Boys Only":
                       boyVal = value;
-                      _preferedType = "Boys Only";
+                      _preferedType = "Solo chicos";
                       break;
                     case "Boys Only":
                       girlVal = value;
-                      _preferedType = "Boys Only";
+                      _preferedType = "Solo chicas";
                       break;
                     case "Anyone":
                       anyVal = value;
-                      _preferedType = "Anyone";
+                      _preferedType = "Todos";
                       break;
                   }
                 });
@@ -1541,12 +1539,12 @@ void createRecord(context) async {
     'description': _detail,
     'monthlyRent': _monthly,
     'ownerDetail': '/User/' + userReference.toString(),
-    'status': 'Available'
+    'status': 'Disponible'
   });
   print(ref.id);
   Navigator.pop(context);
   Navigator.pop(context);
-  Fluttertoast.showToast(msg: 'House Ad Posted Successfully');
+  Fluttertoast.showToast(msg: 'Aviso publicado con exito');
   Navigator.pushReplacement(
       context, MaterialPageRoute(builder: (_) => SearchPage()));
 }
@@ -1708,7 +1706,7 @@ class _MultiImageState extends State<MultiImage> {
     return new MaterialApp(
       home: new Scaffold(
         appBar: AppBar(
-          title: Text("Add House Images"),
+          title: Text("Agregando imagenes"),
           backgroundColor: Colors.blue[700],
           actions: _isImageSelected
               ? <Widget>[

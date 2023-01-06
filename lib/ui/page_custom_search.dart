@@ -35,10 +35,10 @@ class CustomSearchState extends State<CustomSearchPage> {
                                 decimalDigits: 0,
                                 symbol: '\u0053\u002F\u002E'
                               ).format(_minlowerValue);
-  static double _maxupperValue = 350.0;
+  static double _maxupperValue = 350;
   String _upperValueString = NumberFormat.compactCurrency(
                                 decimalDigits: 0,
-                                symbol: '\u0053\u002F'
+                                symbol: ''
                               ).format(_maxupperValue);
   String _upperValueFormatted = NumberFormat.compactCurrency(
                                 decimalDigits: 0,
@@ -608,7 +608,7 @@ class CustomSearchState extends State<CustomSearchPage> {
                   ),
                   Align(alignment: Alignment.centerRight,child: Text("$_upperValueString")),
                   SizedBox(
-                    width: size.wp(4),
+                    width: size.wp(3),
                   ),
                 ],
               ),

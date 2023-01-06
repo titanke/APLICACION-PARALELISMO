@@ -37,7 +37,7 @@ class _PaymentPageState extends State<PaymentPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Pay Rent to ${docsSnap['firstName']}",
+          "Pagar la renta a: ${docsSnap['firstName']}",
           style: TextStyle(fontFamily: 'Ex02'),
         ),
         backgroundColor: colorCurve,
@@ -50,8 +50,8 @@ class _PaymentPageState extends State<PaymentPage> {
             children: <Widget>[
                TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'Name *', 
-                  hintText: 'Enter Your Name',
+                  labelText: 'Nombre *',
+                  hintText: 'Ingresa tu nombre',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.person)
                 ),
@@ -68,7 +68,7 @@ class _PaymentPageState extends State<PaymentPage> {
               ),
                TextFormField(
                 decoration: InputDecoration(
-                  hintText: 'Enter Your Email', 
+                  hintText: 'Ingrese Su email',
                   labelText: 'Email *',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.mail)
@@ -86,11 +86,11 @@ class _PaymentPageState extends State<PaymentPage> {
               ),
                TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'Mobile Number *', 
-                  hintText: 'Enter Your Mobile Number',
+                  labelText: 'Numbero de Telefono *',
+                  hintText: 'Ingrese su numero de Telefono',
                   border: OutlineInputBorder(),
-                  prefixText: "+91",
-                  helperText: 'Verification OTP would be sent on this number',
+                  prefixText: "+51",
+                  helperText: 'Se enviara una verificacion',
                   prefixIcon: Icon(Icons.phone)
                 ),
                 maxLength: 10,
@@ -107,8 +107,8 @@ class _PaymentPageState extends State<PaymentPage> {
               ),
                TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'Rent Amount *', 
-                  hintText: 'Enter Your Amount',
+                  labelText: 'Cantidad de renta *',
+                  hintText: 'Ingresa el monto',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(FontAwesomeIcons.rupeeSign)
                 ),
@@ -126,8 +126,8 @@ class _PaymentPageState extends State<PaymentPage> {
                TextFormField(
                  maxLines: 3,
                 decoration: InputDecoration(
-                  labelText: 'Address *', 
-                  hintText: 'Enter Rented Property Address',
+                  labelText: 'Lugar *',
+                  hintText: 'Ingresa el lugar',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.home)
                 ),
@@ -143,8 +143,8 @@ class _PaymentPageState extends State<PaymentPage> {
               ),
                TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'City *', 
-                  hintText: 'Enter City',
+                  labelText: 'Ciudad *',
+                  hintText: 'Ingresa la Ciudad',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(FontAwesomeIcons.mapMarkerAlt),
                 ),
@@ -170,19 +170,19 @@ class _PaymentPageState extends State<PaymentPage> {
                       setState((){_startDate = new DateFormat('dd-MM-yyyy').format(value);_sdate=value;});
                     }else if(value!=null && _lastDate!=null){
                       (value.difference(_sdate).inSeconds < 0) ? setState((){_startDate = new DateFormat('dd-MM-yyyy').format(value);_sdate=value;})
-                       : Fluttertoast.showToast(msg: 'Start Date must be before  $_lastDate');
+                       : Fluttertoast.showToast(msg: 'La fecha de inicio debe ser primero  $_lastDate');
                     }
                   });
                 },
                 child:AbsorbPointer(
                   child: TextFormField(
                     decoration: InputDecoration(
-                      hintText: _startDate == null ? 'Start Date *' : _startDate.toString(),
+                      hintText: _startDate == null ? 'Fecha de inicio *' : _startDate.toString(),
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(FontAwesomeIcons.calendarAlt),
                     ),
                     validator: (value){
-                      return _startDate==null ? 'Start date is required': null;
+                      return _startDate==null ? 'La fecha es requerida': null;
                     },
                   ),
                 )
@@ -200,22 +200,22 @@ class _PaymentPageState extends State<PaymentPage> {
                   ).then<DateTime>((DateTime value){
                     if(value!=null && _startDate != null){
                       (value.difference(_sdate).inSeconds > 0) ? setState((){_lastDate = new DateFormat('dd-MM-yyyy').format(value);_ldate=value;})
-                       : Fluttertoast.showToast(msg: 'Last Date must be after  $_startDate');
+                       : Fluttertoast.showToast(msg: 'la fecha debe ser despues  $_startDate');
                       //print('Date Time = $value');
                     }else if(value!=null && _startDate==null){
-                      Fluttertoast.showToast(msg: 'Select Start Date');
+                      Fluttertoast.showToast(msg: 'Escoge la fecha de inicio');
                     }
                   });
                 },
                 child:AbsorbPointer(
                   child: TextFormField(
                     decoration: InputDecoration(
-                      hintText: _lastDate==null ? 'Last Date *' : _lastDate.toString(),
+                      hintText: _lastDate==null ? 'Ultima fecha *' : _lastDate.toString(),
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(FontAwesomeIcons.calendarAlt),
                     ),
                     validator: (value){
-                      return _lastDate==null ? 'Last date is required': null;
+                      return _lastDate==null ? 'La fecha es requerida': null;
                     },
                   ),
                 )
@@ -236,7 +236,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       }
                     },
                     child: Center(child: Text(
-                      "PROCEED FOR PAYMENT",
+                      "PROCEDER CON EL PAGO",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: size.getWidthPx(20),

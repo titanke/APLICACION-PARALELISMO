@@ -41,7 +41,7 @@ class _ProfilePageState extends State<ProfilePage> {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: colorCurve,
-        title: Text('User Profile'),
+        title: Text('Perfil de usuario'),
         elevation: 0,
       ),
       body: StreamBuilder(
@@ -64,17 +64,21 @@ class _ProfilePageState extends State<ProfilePage> {
                             decoration: BoxDecoration(
                               color: Colors.grey,
                               image: DecorationImage(
-                                  image: docSnap['profileImage']!=null ? NetworkImage(docSnap['profileImage']) : AssetImage('assets/icons/avatar.png'),
+                                  image: AssetImage('assets/icons/avatar.png'),
+                                  //image: docSnap['profileImage']!=null ? NetworkImage(docSnap['profileImage']) : AssetImage('assets/icons/avatar.png'),
                                   fit: BoxFit.fill),
                             ),
                           ),
                         ),
+
                         Container(
                           margin: EdgeInsets.fromLTRB(size.getWidthPx(16),size.getWidthPx(200), size.getWidthPx(16), size.getWidthPx(16)),
                           child: Column(
                             children: <Widget>[
+
                               Stack(
                                 children: <Widget>[
+
                                   Container(
                                     padding: EdgeInsets.all(size.getWidthPx(16)),
                                     margin: EdgeInsets.only(top: size.getWidthPx(16)),
@@ -84,6 +88,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     ),
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
+                                      /*
                                       children: <Widget>[
                                         Container(
                                           margin: EdgeInsets.only(left: size.getWidthPx(96)),
@@ -253,15 +258,19 @@ class _ProfilePageState extends State<ProfilePage> {
                                         Divider(thickness: size.getWidthPx(1),color: Colors.grey,),
                                         SizedBox(height: size.getWidthPx(10),),
                                       ],
+                                      */
                                     ),
                                   ),
+
                                   Container(
                                     height: 80,
                                     width: 80,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10.0),
                                         image: DecorationImage(
-                                            image: docSnap['profileImage']!=null ? NetworkImage(docSnap['profileImage']) : AssetImage('assets/icons/avatar.png'),
+                                            image: AssetImage('assets/icons/avatar.png'),
+
+                                            //image: docSnap['profileImage']!=null ? NetworkImage(docSnap['profileImage']) : AssetImage('assets/icons/avatar.png'),
                                             fit: BoxFit.cover
                                         )
                                     ),
@@ -269,9 +278,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                 ],
                               ),
+
                             ],
                           ),
                         ),
+
                       ]
                       ),
                     ),

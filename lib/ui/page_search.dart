@@ -111,6 +111,7 @@ class _SearchResultPageState extends State<SearchResultPage> {
               children: <Widget>[
                       Stack(
                             children: <Widget>[
+
                               Card(
                                 elevation: 4,
                                 shape: RoundedRectangleBorder(
@@ -136,10 +137,17 @@ class _SearchResultPageState extends State<SearchResultPage> {
                                           width: MediaQuery.of(context).size.width*0.92,
                                           height: MediaQuery.of(context).size.height*0.25,
                                           color: Colors.grey,
+                                          /*
                                           child: Image.network(
                                             '${docsSnap['houseImages'][0]}',
                                             fit: BoxFit.fill
                                           ),
+                                           */
+                                          child: Image.network(
+                                              'https://imganuncios.mitula.net/oficina_con_buena_ubicacion_en_la_mejor_zona_de_santa_catalina_3600005636567764181.jpg',
+                                              fit: BoxFit.fill
+                                          ),
+
                                         ),
                                       ),
                                       Row(
@@ -158,10 +166,13 @@ class _SearchResultPageState extends State<SearchResultPage> {
                                                     ),
                                                   ),
                                                 ),
+
                                                 child: Align(
                                                   alignment: Alignment.center,
-                                                  child: Text('${docsSnap['builtUpArea']} Sq.ft.')
+                                                  child: Text('${docsSnap['builtUpArea']} m2.')
                                                 ),
+
+
                                               ),
                                             ),
                                           ),
@@ -177,19 +188,21 @@ class _SearchResultPageState extends State<SearchResultPage> {
                                                     ),
                                                   ),
                                                 ),
+
                                                 child: Column(
                                                   children: <Widget>[
                                                     SizedBox(
                                                       height: 20,
                                                     ),
                                                     Align(
-                                                      child: Text('${docsSnap['Overview']['room']} BHK in ${docsSnap['Address']['city']}')
+                                                      child: Text('${docsSnap['Overview']['room']} cuarto en ${docsSnap['Address']['city']}')
                                                     ),
                                                     Align(
                                                       child: Text('${docsSnap['Overview']['furnishingStatus']}')
                                                     ),
                                                   ],
                                                 ),
+
                                             ),
                                           ),
                                           ResponsiveContainer(
@@ -198,6 +211,7 @@ class _SearchResultPageState extends State<SearchResultPage> {
                                             child: ClipRRect(
                                               borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
                                               child: Container(
+
                                                 child: Column(
                                                   children: <Widget>[
                                                     SizedBox(
@@ -209,10 +223,11 @@ class _SearchResultPageState extends State<SearchResultPage> {
                                                     ),
                                                     Align(
                                                       alignment: Alignment.center,
-                                                      child: Text('Rs. / month'),
+                                                      child: Text('S/. / mes'),
                                                     ),
                                                   ],
                                                 ),
+
                                               ),
                                             ),
                                           ),
@@ -237,6 +252,7 @@ class _SearchResultPageState extends State<SearchResultPage> {
                                               Icons.favorite,
                                               color: _isPressed[index] ? Colors.blue[700] : Colors.grey,
                                             ),
+
                                             onPressed: () {
                                               setState(() {
                                                 _isPressed[index] = !_isPressed[index];
@@ -274,6 +290,7 @@ class _SearchResultPageState extends State<SearchResultPage> {
                                                   fontSize: 16.0
                                               );
                                             },
+
                                           ),
                                         ),
                                       ),
@@ -304,7 +321,7 @@ class _SearchResultPageState extends State<SearchResultPage> {
           padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 20.0),
           child: Column(
             children: <Widget>[
-              Text("Which type of house",
+              Text("¿Que tipo de cuarto",
                   style: TextStyle(
                       fontFamily: 'Exo2',
                       fontSize: 24.0,
@@ -312,7 +329,7 @@ class _SearchResultPageState extends State<SearchResultPage> {
                       color: Colors.white
                     ),
                   ),
-              Text("would you like to buy?",
+              Text("deseas alquilar?",
                 style: TextStyle(
                     fontFamily: 'Exo2',
                     fontSize: 24.0,
@@ -387,7 +404,7 @@ Widget _searchWidget() {
                   child: Row(children: <Widget>[
                     SizedBox(width: size.getWidthPx(10),),
                     Icon(Icons.search,color: colorCurve),
-                    Text("Customize you search...")
+                    Text("Cuartos baratos...")
                   ],) 
               ),),
           ],
